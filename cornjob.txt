@@ -1,0 +1,1 @@
+sudo su - postgres -c "psql -c 'TRUNCATE TABLE table_name;' database_name"

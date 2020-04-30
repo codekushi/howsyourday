@@ -1,0 +1,56 @@
+<!doctype HTML>
+<head>
+<title>Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+    var socket = io.connect('http://127.0.0.1:5000');
+        document.querySelector('#msgsend').onclick = () => {
+        var msg = $('#msgtext').val();
+        $('#msgtext').val('');
+        socket.emit('message', {'msg': msg});
+        }
+        socket.on ('roommsg', data => {
+        const li = document.createElement('li');
+        li.innerHTML = `${data.user}`+'::'+'<strong>'+`${data.msg}`+"</strong>"+'--'+`${data.time}`;
+        document.querySelector('#messages').append(li);
+       })
+   });
+</script>
+</head>
+<body>
+  <nav>
+<h3><a class="navbar-brand">How's your Day</a></h3>
+<div class="row">
+<div class="col">
+<a href="write"><button type="submit" class="btn btn-outline-primary">Write</button></a>
+</div>
+<div class="col">
+<a href="user"><button type="submit" class="btn btn-outline-primary">Profile</button></a>
+</div>
+<div class="col">
+<a href="logout"><button type="submit" class="btn btn-outline-primary">Logout</button></a>
+</div>
+</div>
+</nav>
+<h1 align="center">This is a Global Chat Room</h1>
+<h3 align="center">App doesn't store messages, close (or) refresh the page your chat is lost</h3>
+<div class="container" style="width: 100%;">
+  <div id="messages"></div>
+<div class="fixed-bottom">
+<form action="javascript:void(0);">
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Enter Your Message</span>
+    </div>
+    <input type="text" class="form-control" id="msgtext">
+  <input type="submit" class="btn btn-primary" id="msgsend" value="send">
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>

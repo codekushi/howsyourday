@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Write a Post</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+#post {
+  height: 250px;
+  width:100%;
+  align: center;
+}
+</style>
+<script>
+	Filevalidation = () => {
+		const pic = document.getElementById('profilepic');
+		if (pic.files.length > 0) {
+			for (const i = 0; i <= fi.files.length - 1; i++) {
+				const picsize = pic.files.item(i).size;
+				const file = Math.round((picsize / 1024));
+        if (file > 4096) {
+					alert(
+					"File too small, please select a file greater than 4mb");
+				};
+				}
+			}
+		}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+<h3><a class="navbar-brand">How's your Day</a></h3>
+<div class="row">
+<div class="col">
+<a href="posts"><button type="submit" class="btn btn-outline-primary">Posts</button></a>
+</div>
+<div class="col">
+<a href="user"><button type="submit" class="btn btn-outline-primary">Profile</button></a>
+</div>
+<div class="col">
+<a href="logout"><button type="submit" class="btn btn-outline-primary">Logout</button></a>
+</div>
+</nav>
+<h1 style="text-align: center;">Write about Your Day</h1>
+<div class="container" style="width: 100%; align-content:center;">
+  <form method="POST" action="{{ url_for('write') }}" enctype="multipart/form-data" onsubmit="Filevalidation()">
+      <textarea class="form-control" maxlength="200" id="post" name="post" required></textarea>
+      &nbsp;
+      <br>
+  <input type="file" name="postpic" accept=".jpg,.png,.jpeg" class="form-control" requrired>
+  &nbsp;
+  <br>
+    <button type="submit" class="btn btn-primary">share</button>
+  </form>
+  </div>
+</body>
+</html>

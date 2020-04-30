@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+<head>
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+body {
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-image: url({{ url_for('static', filename='bg-diary.jpg')}});
+}
+#main {
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  text-align: center;
+  position: absolute;
+}
+.fixed-bottom {
+  text-align: center;
+  background-color: darkgrey;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+<h3><a class="navbar-brand">How's your Day</a></h3>
+<div class="row">
+<div class="col">
+<a href="signup"><button type="submit" class="btn btn-outline-primary">Register</button></a>
+</div>
+<div class="col">
+<a href="signin"><button type="submit" class="btn btn-outline-primary">Login</button></a>
+</div>
+</nav>
+<div class="img-fluid" id="main">
+<div class="alert alert-primary"><h1>An Platform to share Your Day</h1></div>
+<br>
+<div class="btn btn-outline-dark"><h3>There is no greater agony than bearing an untold story inside you.</h3></div>
+</div>
+<div class="fixed-bottom">Created by Kushwanth Reddy</div>
+</body>
+</html>

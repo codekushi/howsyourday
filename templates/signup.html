@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+  <h3><a class="navbar-brand">How's your Day</a></h3>
+  <a href="signin"><button type="submit" class="btn btn-outline-primary">Login</button></a>
+  </nav>
+<h1 align="center">Register</h1>
+<div class="container" style="width: 100%; align-content:center;">
+  <form method="POST" action="{{ url_for('register') }}" class="form-signin">
+    <div class="form-group">
+      <label for="user">User Name</label>
+      <input type="text" class="form-control" id="user" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input class="form-control" id="fname" name="firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input class="form-control" id="lname" name="lastname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password</label>
+      <input type="password"  class="form-control" id="pwd" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  </div>
+</body>
+</html>

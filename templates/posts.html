@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Posts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+ img {
+   height: 150px;
+   width: 150px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+<h3><a class="navbar-brand">How's your Day</a></h3>
+<div class="row">
+<div class="col">
+<a href="write"><button type="submit" class="btn btn-outline-primary">Write</button></a>
+</div>
+<div class="col">
+<a href="chat"><button type="submit" class="btn btn-outline-primary">chat</button></a>
+</div>
+<div class="col">
+<a href="user"><button type="submit" class="btn btn-outline-primary">Profile</button></a>
+</div>
+<div class="col">
+<a href="logout"><button type="submit" class="btn btn-outline-primary">Logout</button></a>
+</div>
+</nav>
+{% for user, post, image in posts %}
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <div class="col">
+<img src="{{ url_for('static', filename='images/' + image) }}" class="img-fluid"alt="post image">
+</div>
+<div class="col">
+<div class="card-title btn-primary">{{ user }}</div>
+<div class="card-text">{{ post }}</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</body>
+</html>
