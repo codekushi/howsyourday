@@ -1,0 +1,3 @@
+CREATE TABLE globalchat(id SERIAL PRIMARY KEY,
+username VARCHAR NOT NULL,
+message VARCHAR(100));

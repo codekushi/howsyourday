@@ -44,7 +44,7 @@
 <h1 style="text-align: center;">Write about Your Day</h1>
 <div class="container" style="width: 100%; align-content:center;">
   <form method="POST" action="{{ url_for('write') }}" enctype="multipart/form-data" onsubmit="Filevalidation()">
-      <textarea class="form-control" maxlength="200" id="post" name="post" required></textarea>
+      <textarea class="form-control" maxlength="500" id="post" name="post" required></textarea>
       &nbsp;
       <br>
   <input type="file" name="postpic" accept=".jpg,.png,.jpeg" class="form-control" requrired>

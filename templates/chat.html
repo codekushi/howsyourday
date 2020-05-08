@@ -15,19 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         socket.on ('roommsg', data => {
         const li = document.createElement('li');
-        li.innerHTML = `${data.user}`+'::'+'<strong>'+`${data.msg}`+"</strong>"+'--'+`${data.time}`;
+        li.innerHTML = `${data.user}`+'::'+'<strong>'+`${data.msg}`+"</strong>";
         document.querySelector('#messages').append(li);
        })
    });
 </script>
 </head>
 <body>
-  <nav>
+<nav>
 <h3><a class="navbar-brand">How's your Day</a></h3>
 <div class="row">
-<div class="col">
-<a href="write"><button type="submit" class="btn btn-outline-primary">Write</button></a>
-</div>
 <div class="col">
 <a href="user"><button type="submit" class="btn btn-outline-primary">Profile</button></a>
 </div>
@@ -37,9 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </nav>
 <h1 align="center">This is a Global Chat Room</h1>
-<h3 align="center">App doesn't store messages, close (or) refresh the page your chat is lost</h3>
+<p>Refresh page to get delete button on your mesages</p>
 <div class="container" style="width: 100%;">
-  <div id="messages"></div>
+  {% for id, user, msg in message %}
+  <li class="container">{{ user }}::<strong>{{ msg }}</strong>
+    {% if msguser == user %}
+    <a href="{{ url_for('delmsg' ,id=id)}}"><button type="submit" class="btn btn-outline-light btn-sm">Delete</button></a>
+    {% endif %}
+  </li>
+  {% endfor %}
+  <div class="container" id="messages"></div>
 <div class="fixed-bottom">
 <form action="javascript:void(0);">
 <div class="input-group">

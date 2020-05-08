@@ -1,0 +1,42 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Post</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+ .img-thumbnail { height: 200px; width: 200px;}
+ #cmt { font-size: 18px; font-family: inherit;}
+ #cmtuser {font-size: 30px; font-family: monospace; color: #5CDB95;}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+<h3><a class="navbar-brand">How's your Day</a></h3>
+<a href="{{ url_for('posts') }}"><button type="submit" class="btn btn-outline-primary">Posts</button></a>
+</nav>
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <div class="col text-center" id="post-img">
+<img src="{{ url_for('static', filename='images/' + image) }}" class="img-thumbnail" alt="post image">
+</div>
+<div class="col">
+<h2 class="card-title ">{{ user }}</h2>
+<div class="card-text">{{ post }}</div>
+</div>
+</div>
+{% for cid, user, comment in comments %}
+<div class="card">
+<div class="card-header"><span class="card-title h4" id="cmtuser">{{ user }}</span>&nbsp;
+  {% if loggeduser == user %}
+<a href="{{ url_for('delcomment' ,pid=id, id=cid)}}"><button type="submit" class="btn btn-secondary btn-sm">Delete Comment</button></a>
+{% endif %}
+</div>
+<p class="card-text" id="cmt">{{ comment }}</p>
+{% endfor %}
+</div>
+{% if loggeduser == user %}
+<a href="{{ url_for('delpost' ,id=id)}}"><button type="submit" class="btn btn-outline-info btn-lg btn-block">Delete Post</button></a>
+{% endif %}
+</body>
+</html>

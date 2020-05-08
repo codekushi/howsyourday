@@ -1,1 +1,3 @@
 sudo su - postgres -c "psql -c 'TRUNCATE TABLE table_name;' database_name"
+# for posts table ## sudo su - postgres -c "psql -c 'TRUNCATE TABLE posts;' final"
+# for posts table ## sudo su - postgres -c "psql -c 'TRUNCATE TABLE globalchat;' final"
