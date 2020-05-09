@@ -3,11 +3,11 @@
 ## This a like a Social Media Platfrom to share  "How's your Day"
 
 ## technologies used
-###- Flask, Flask-SocketIO
-###- HTML for jinja template
-###- CSS for some parts
-###- Javascript fo Flask-SocketIO
-###- SQL with PostgresSql
+### Flask, Flask-SocketIO
+### HTML for jinja template
+### CSS for some parts
+### Javascript fo Flask-SocketIO
+### SQL with PostgresSql
 
 ### This web app is designed that you can share your feeling that how was your day You can make your profile with an image, tell users about your day with an image and piece of text
 
@@ -20,6 +20,8 @@
 - you can delete your posts and Comments
 - A global chatroom for you to chat with database storing of messages with a option of deleting your messages
 - All the messages will be deleted at the the time of deleting posts
+
+## All the pages are Mobile responsive
 
 ### I have used PostgresSql database on my local computer for storing information you will need to use a database with the templates in the sql folder to achieve the same results
 
