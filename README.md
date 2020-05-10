@@ -1,6 +1,6 @@
 ## This a like a Social Media Platfrom to share  About your Day
 
-## technologies used
+## Dependencies used
 ### Flask, Flask-SocketIO
 ### HTML for jinja template
 ### CSS for some parts
