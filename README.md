@@ -1,6 +1,4 @@
-## This is my final Project for CS50 Web Programming with Python and Javascript
-
-## This a like a Social Media Platfrom to share  "How's your Day"
+## This a like a Social Media Platfrom to share  About your Day
 
 ## technologies used
 ### Flask, Flask-SocketIO
@@ -47,3 +45,5 @@
 ## cornjob.text - for scheduled deletions in filesystem
 - The app states it deletes Posts at 23:59 PM everyday. As I have used PostgresSql Database which doesn't have ant events and triggers I have used cornjob for this task. So on scheduled time the cornjob deletes Posts table data which automatically deletes Comments table data and also images for respective posts in filesystem
 ## requirements.txt to install requried packages
+
+#### This is my final Project for CS50 Web Programming with Python and Javascript
