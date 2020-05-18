@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 from flask_socketio import *
 
 app = Flask(__name__)
-app.secret_key = 'cs50finalprojectbykushwanth'
+app.secret_key = 'howsyourday'
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
