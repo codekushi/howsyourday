@@ -4,7 +4,7 @@
 ### Flask, Flask-SocketIO
 ### HTML for jinja template
 ### CSS for some parts
-### Javascript fo Flask-SocketIO
+### Javascript for Flask-SocketIO
 ### SQL with PostgresSql
 
 ### This web app is designed that you can share your feeling that how was your day You can make your profile with an image, tell users about your day with an image and piece of text
@@ -14,7 +14,7 @@
 - Set up your profile
 - Share about your day with an image and some text any number of times
 - comment on your post and other posts
-- All the data of the post will be deleted for the next because we won't have same day every day
+- All the data of the post will be deleted for the next day because we won't have same day every day
 - you can delete your posts and Comments
 - A global chatroom for you to chat with database storing of messages with a option of deleting your messages
 - All the messages will be deleted at the the time of deleting posts
@@ -42,7 +42,7 @@
 - user.html for profile page
 - welcome.html for homepage
 - write.html for writing post
-## cornjob.text - for scheduled deletions in filesystem
+## cornjob.text - for scheduled deletions in filesystem(if deployed)
 - The app states it deletes Posts at 23:59 PM everyday. As I have used PostgresSql Database which doesn't have ant events and triggers I have used cornjob for this task. So on scheduled time the cornjob deletes Posts table data which automatically deletes Comments table data and also images for respective posts in filesystem
 ## requirements.txt to install requried packages
 
