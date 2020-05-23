@@ -3,7 +3,7 @@
 ## Dependencies used
 ### Flask, Flask-SocketIO
 ### HTML for jinja template
-### CSS for some parts
+### CSS, BootStrap for styling
 ### Javascript for Flask-SocketIO
 ### SQL with PostgresSql
 
