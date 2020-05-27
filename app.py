@@ -64,6 +64,8 @@ def login():
     username = request.form.get("username")
     access = request.form.get("password")
     auth = db.execute("SELECT * FROM users WHERE username= :uname", {"uname": username}).fetchone()
+    if auth == None:
+        return render_template("error.html", message="you have not registered")
     assume = check_password_hash(auth.password, access)
     if (assume == True):
        session['loggedin'] = True
