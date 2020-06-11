@@ -1,4 +1,4 @@
-## This a like a Social Media Platfrom to share  About your Day
+## This is like a Social Media Platfrom to share "About your Day"
 ![logo](https://github.com/codekushi/howsyourday/blob/master/logo.png?raw=true)
 ## Dependencies used
 ### Flask, Flask-SocketIO
@@ -47,3 +47,4 @@
 ## requirements.txt to install requried packages
 
 #### This is my final Project for CS50 Web Programming with Python and Javascript
+Here are my [Certificate of Completion from CS50](https://certificates.cs50.io/599882b0-91a8-41ea-a5eb-addfab25fce1) and [Verified Certificate of Achievement from edX](https://courses.edx.org/certificates/2c010d08b5cf4411b3d1c702a94d2e83)
