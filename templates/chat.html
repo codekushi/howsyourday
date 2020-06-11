@@ -14,12 +14,32 @@ document.addEventListener('DOMContentLoaded', () => {
         socket.emit('message', {'msg': msg});
         }
         socket.on ('roommsg', data => {
-        const li = document.createElement('li');
-        li.innerHTML = `${data.user}`+'::'+'<strong>'+`${data.msg}`+"</strong>";
+        const li = document.createElement('p');
+        li.innerHTML = '<section class="btn-group" role="group"><button type="button" class="btn btn-outline-success">'+`${ data.user }`+'</button></section><section class="alert alert-primary">'+`${data.msg}`+'</section>';
         document.querySelector('#messages').append(li);
+        $("#messages").animate({ scrollTop: $("#messages")[0].scrollHeight}, 1000);
        })
    });
 </script>
+<style type="text/css">
+#main {
+display: float;
+width: 100%;
+align-content:center;
+position: fixed;
+}
+#messages {
+  position: fixed;
+  height: 499px;
+  overflow: scroll;
+  width: 100%;
+}
+#msgform {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+</style>
 </head>
 <body>
 <nav>
@@ -35,16 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 </nav>
 <h1 align="center">This is a Global Chat Room</h1>
 <p>Refresh page to get delete button on your mesages</p>
-<div class="container" style="width: 100%;">
-  {% for id, user, msg in message %}
-  <li class="container">{{ user }}::<strong>{{ msg }}</strong>
-    {% if msguser == user %}
-    <a href="{{ url_for('delmsg' ,id=id)}}"><button type="submit" class="btn btn-outline-light btn-sm">Delete</button></a>
-    {% endif %}
-  </li>
-  {% endfor %}
-  <div class="container" id="messages"></div>
-<div class="fixed-bottom">
+<div class="container" id="main">
+<div id="messages">
+{% for id, user, msg in message %}
+<p><section class="btn-group" role="group"><button type="button" class="btn btn-success">{{ user }}</button>
+  {% if msguser == user %}
+<button type="submit" class="btn btn-outline-danger"><a href="{{ url_for('delmsg' ,id=id)}}">Delete</a></button>
+  {% endif %}
+</section>
+<section class="alert alert-primary">{{ msg }}</section>
+{% endfor %}
+</p>
+</div>
+<div id="msgform">
 <form action="javascript:void(0);">
 <div class="input-group">
     <div class="input-group-prepend">
@@ -54,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <input type="submit" class="btn btn-primary" id="msgsend" value="send">
 </div>
 </form>
-</div>
 </div>
 </body>
 </html>
