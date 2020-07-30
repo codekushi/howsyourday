@@ -1,7 +1,1 @@
 remote_theme: codekushi/codekushi-theme
-
-title: Howsyourday
-description: A social Media platform to share about your Day. Final Project for CS50's Web Programming with Python and JavaScript
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-cayman
