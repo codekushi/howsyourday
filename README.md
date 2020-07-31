@@ -10,6 +10,8 @@
 
 ### This web app is designed that you can share your feeling that how was your day You can make your profile with an image, tell users about your day with an image and piece of text
 
+You can deploy the app in any hosting service that supports Flask. You can use my [Digitalocean referral link](https://m.do.co/c/7d066b069429) and get $100 credit for 60 days 
+
 ## Instructions to use the app:
 - Register and log into app
 - Set up your profile
