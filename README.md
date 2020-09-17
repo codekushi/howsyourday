@@ -1,6 +1,6 @@
 # howsyourday
 ## This is like a Social Media Platfrom to share "About your Day"
-![logo](https://github.com/codekushi/howsyourday/blob/master/logo.png?raw=true)
+![logo](https://github.com/kushwanth/howsyourday/blob/master/logo.png?raw=true)
 ## Dependencies used
 ### Flask, Flask-SocketIO
 ### HTML for jinja template
